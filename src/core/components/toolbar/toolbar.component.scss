@@ -13,15 +13,35 @@
     justify-content: space-between;
     gap: 1em;
 
+    .logo-container {
+      width: 48px;
+      height: 48px;
+      transition: height 0.3s linear, opacity 0.3s linear, width 0.3s linear, height 0.3s linear;
+    }
+
     .title {
       font-size: 1.5em;
       font-weight: 600;
+      transition: visibility 0.3s linear, opacity 0.3s linear, width 0.3s linear, height 0.3s linear;
+      transition: font-size 0.3s linear, opacity 0.3s linear, width 0.3s linear, height 0.3s linear;
     }
-  }
 
-  @media screen and (max-width: 748px) {
-    .title {
-      display: none;
+    @media screen and (max-width: 748px) {
+      .title {
+        font-size: 1em;
+      }
+    }
+
+    @media screen and (max-width: 640px) {
+      .logo-container {
+        width: 32px;
+        height: 32px;
+      }
+
+      .title {
+        visibility: hidden;
+        opacity: 0;
+      }
     }
   }
 }
