@@ -1,0 +1,27 @@
+:host {
+  margin: 0;
+  padding: 0;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+
+  .menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+
+    .title {
+      font-size: 1.5em;
+      font-weight: 600;
+    }
+  }
+
+  @media screen and (max-width: 748px) {
+    .title {
+      display: none;
+    }
+  }
+}
