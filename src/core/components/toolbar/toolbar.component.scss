@@ -1,11 +1,31 @@
+@import "/src/assets/kns.variables";
+
 :host {
   margin: 0;
   padding: 0;
+  position: relative;
+  display: block;
 }
 
 .toolbar {
   display: flex;
   align-items: center;
+
+  .nav-home-button {
+    cursor: pointer;
+    position: relative;
+
+    .router-link-active {
+      &::after {
+        content: '';
+        position: absolute;
+        border-top: 3px solid $color-primary;
+        width: 100%;
+        top: calc(100% + 2px);
+        left: 0;
+      }
+    }
+  }
 
   .menu {
     display: flex;

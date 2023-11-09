@@ -1,18 +1,36 @@
 <div class="home-container">
   <div class="cards">
     <div class="kns-card">
-      <span class="kns-card-title">Site is in development</span>
+      <div class="kns-card-title">
+        <span class="color-primary">Site is in development</span>
+        <i class="fa fa-hand-o-left fa-lg color-primary" aria-hidden="true"></i>
+      </div>
       <p class="kns-card-body">
         Sorry for inconvenience, this resource is for personal use only. If you
         interested in using this site, please contact the author.
       </p>
     </div>
     <div class="kns-card">
-      <span class="kns-card-title">Tools and Utilities</span>
-      <p class="kns-card-body">
-        Eventually, this section will contain set of controls and helpers, that
-        will simplify your day-to-day tasks.
-      </p>
+      <div class="kns-card-title">
+        <span class="color-primary">Tools and Utilities</span>
+        <i class="fa fa-gears fa-lg color-primary" aria-hidden="true"></i>
+      </div>
+      <div class="kns-card-body">
+        <p>
+          Eventually, this section will contain set of controls and helpers,
+          that will simplify your day-to-day tasks.
+        </p>
+        <p>
+          Guid generator <a href="javascript:void(0)" (click)="generateGuid()">New Guid</a>
+          <span class="guid">{{guid}}</span>
+        </p>
+      </div>
+    </div>
+    <div class="kns-card">
+      <div class="kns-card-title">
+        <span class="color-primary">Home space</span>
+      </div>
+      <p class="kns-card-body">For authorized users only.</p>
     </div>
   </div>
 </div>

@@ -22,6 +22,14 @@ html, body {
   justify-content: start;
 }
 
+.color-primary {
+  color: $color-primary;
+}
+
+a, a:visited {
+  color: $color-primary;
+}
+
 .nav {
   flex-grow: 0;
   flex-shrink: 0;

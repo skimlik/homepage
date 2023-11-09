@@ -1,7 +1,7 @@
 <div class="toolbar">
   <div class="menu">
-    <div class="logo-container">
-      <kn-logo></kn-logo>
+    <div class="logo-container nav-home-button">
+      <kn-logo tabindex="0" [routerLink]="['/home']" routerLinkActive="router-link-active" class="logo"></kn-logo>
     </div>
     <div class="title" *ngIf="title">{{title}}</div>
   </div>
