@@ -1,0 +1,30 @@
+.kns-card {
+  position: relative;
+  margin: 20px;
+  padding: 1em;
+  border: 1px solid $color-border;
+  border-radius: 3px;
+  width: 320px;
+  min-height: 240px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  @include box-shadow;
+
+  .kns-card-title {
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  .kns-card-body {
+    font-weight: normal;
+    flex-grow: 1;
+  }
+}
