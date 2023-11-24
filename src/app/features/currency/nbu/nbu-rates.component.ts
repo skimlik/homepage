@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NbuRatesService } from './nbu-rates.service';
-import { map } from 'rxjs/operators';
+import { map, shareReplay } from 'rxjs/operators';
 
 @Component({
   selector: 'kn-nbu-rates',
@@ -16,7 +16,8 @@ export class NbuRatesComponent {
         if (a?.txt == b?.txt) return 0;
         return a.txt.localeCompare(b.txt, 'uk-UA');
       })
-    )
+    ),
+    shareReplay()
   );
 
   mainRates = this.rates.pipe(

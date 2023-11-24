@@ -1,7 +1,8 @@
 <div class="rates-container">
   <h2>NBU Currency Rates</h2>
-
-
+  <p>
+    Base currency UAH
+  </p>
   <div class="currency-table">
     <div class="header currency-table-row">
       <div class="date">Exchange Date</div>
@@ -10,10 +11,10 @@
       <div class="rate">Rate</div>
     </div>
     <div class="currency-table-row" *ngFor="let r of mainRates | async">
-      <div>{{r.exchangedate}}</div>
-      <div>{{r.txt}}</div>
-      <div>{{r.cc}}</div>
-      <div>{{r.rate}}</div>
+      <div>{{ r.exchangedate }}</div>
+      <div>{{ r.txt }}</div>
+      <div>{{ r.cc }}</div>
+      <div>{{ r.rate }}</div>
     </div>
   </div>
   <p></p>
@@ -25,10 +26,10 @@
       <div class="rate">Rate</div>
     </div>
     <div class="currency-table-row" *ngFor="let r of otherRates | async">
-      <div>{{r.exchangedate}}</div>
-      <div>{{r.txt}}</div>
-      <div>{{r.cc}}</div>
-      <div>{{r.rate}}</div>
+      <div>{{ r.exchangedate }}</div>
+      <div>{{ r.txt }}</div>
+      <div>{{ r.cc }}</div>
+      <div>{{ r.rate }}</div>
     </div>
   </div>
 </div>
