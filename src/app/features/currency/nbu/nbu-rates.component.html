@@ -1,7 +1,7 @@
 <div class="rates-container">
   <h2>NBU Currency Rates</h2>
   <p>
-    Base currency UAH
+    Base currency {{baseCurrency}}
   </p>
   <div class="currency-table">
     <div class="header currency-table-row">
@@ -14,7 +14,7 @@
       <div>{{ r.exchangedate }}</div>
       <div>{{ r.txt }}</div>
       <div>{{ r.cc }}</div>
-      <div>{{ r.rate }}</div>
+      <div>{{ r.rate | currency }}</div>
     </div>
   </div>
   <p></p>
@@ -29,7 +29,7 @@
       <div>{{ r.exchangedate }}</div>
       <div>{{ r.txt }}</div>
       <div>{{ r.cc }}</div>
-      <div>{{ r.rate }}</div>
+      <div>{{ r.rate | currency}}</div>
     </div>
   </div>
 </div>

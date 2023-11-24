@@ -4,22 +4,33 @@ import { NbuRatesComponent } from './nbu/nbu-rates.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
+import { featureName } from './store';
+import { reducers } from './store/currency-state';
+import { EffectsModule } from '@ngrx/effects';
+import { NbuRatesEffects } from './store/nbu-rates/nbu-rates.effects';
 
 const routes: Routes = [
   {
     path: '',
-    component: NbuRatesComponent
+    component: NbuRatesComponent,
   },
   {
     path: 'nbu',
-    component: NbuRatesComponent
-  }
-]
+    component: NbuRatesComponent,
+  },
+];
 
 @NgModule({
-  imports: [CommonModule, RouterModule.forChild(routes), HttpClientModule],
+  imports: [
+    CommonModule,
+    HttpClientModule,
+    RouterModule.forChild(routes),
+    EffectsModule.forFeature([NbuRatesEffects]),
+    StoreModule.forFeature(featureName, reducers)
+  ],
   exports: [],
   declarations: [NbuRatesComponent],
   providers: [],
 })
-export class CurrencyRatesModule { }
+export class CurrencyRatesModule {}

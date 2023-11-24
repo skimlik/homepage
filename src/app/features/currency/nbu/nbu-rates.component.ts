@@ -1,36 +1,53 @@
-import { Component } from '@angular/core';
-import { NbuRatesService } from './nbu-rates.service';
-import { map, shareReplay } from 'rxjs/operators';
+import {
+  Component,
+  DEFAULT_CURRENCY_CODE,
+  Inject,
+  OnInit,
+} from '@angular/core';
+import { CurrenciesState } from '../store/currency-state';
+import { Store, select } from '@ngrx/store';
+import {
+  currentInterestListRatesSelector,
+  otherListRatesSelector,
+} from '../store/nbu-rates';
+import { getCurrentRatesAction } from '../store/nbu-rates/nbu-rates.actions';
+import { map } from 'rxjs/operators';
+import { NbuCurrencyRate } from './nbu-currency-rate.model';
 
 @Component({
   selector: 'kn-nbu-rates',
   templateUrl: 'nbu-rates.component.html',
   styleUrls: ['nbu-rates.component.scss'],
 })
-export class NbuRatesComponent {
-  private readonly mainCurrencyCodes = ['EUR', 'USD'];
-
-  rates = this._srv.get().pipe(
-    map((r) =>
-      r.sort((a, b) => {
-        if (a?.txt == b?.txt) return 0;
-        return a.txt.localeCompare(b.txt, 'uk-UA');
-      })
-    ),
-    shareReplay()
+export class NbuRatesComponent implements OnInit {
+  baseCurrency = '';
+  mainRates = this._store.pipe(
+    select(currentInterestListRatesSelector),
+    map((d) => d.sort(this.sortByRateDescending))
+  );
+  otherRates = this._store.pipe(
+    select(otherListRatesSelector),
+    map((d) => d.sort(this.sortByRateDescending))
   );
 
-  mainRates = this.rates.pipe(
-    map((r) =>
-      r.filter((rate) => this.mainCurrencyCodes.some((c) => c === rate.cc))
-    )
-  );
+  constructor(
+    @Inject(DEFAULT_CURRENCY_CODE) baseCurrency: string,
+    private _store: Store<CurrenciesState>
+  ) {
+    this.baseCurrency = baseCurrency;
+  }
 
-  otherRates = this.rates.pipe(
-    map((r) =>
-      r.filter((rate) => !this.mainCurrencyCodes.some((c) => c === rate.cc))
-    )
-  );
+  ngOnInit(): void {
+    this._store.dispatch(getCurrentRatesAction());
+  }
 
-  constructor(private _srv: NbuRatesService) {}
+  private sortByRateDescending(
+    s1: NbuCurrencyRate,
+    s2: NbuCurrencyRate,
+    desc: boolean = true
+  ): number {
+    const order = desc ? -1 : 1;
+    if (s1.rate === s2.rate) return 0;
+    return s1.rate > s2.rate ? 1 * order : -1 * order; // desc
+  }
 }
