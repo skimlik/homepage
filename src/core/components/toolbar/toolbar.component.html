@@ -1,13 +1,23 @@
 <div class="toolbar">
   <div class="menu">
     <div class="logo-container nav-home-button">
-      <kn-logo tabindex="0" [routerLink]="['/home']" routerLinkActive="router-link-active" class="logo"></kn-logo>
+      <kn-logo
+        tabindex="0"
+        [routerLink]="['/home']"
+        routerLinkActive="router-link-active"
+        class="logo"
+      ></kn-logo>
     </div>
-    <div class="title" *ngIf="title">{{title}}</div>
+    <div class="title" *ngIf="title">{{ title }}</div>
   </div>
-  <div class="menu-items">
-    <div class="group-items"></div>
-  </div>
-  <div class="controls"></div>
+  <kn-main-menu>
+    <kn-root-menu-item text="Third-party tools" [hasSubMenu]="true">
+      <kn-menu-item text="Currency rates" [hasSubitems]="true">
+        <kn-sub-menu-item
+          text="NBU"
+          [routerLink]="['/currency/nbu']"
+        ></kn-sub-menu-item>
+      </kn-menu-item>
+    </kn-root-menu-item>
+  </kn-main-menu>
 </div>
-

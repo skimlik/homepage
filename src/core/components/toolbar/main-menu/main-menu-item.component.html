@@ -1,0 +1,10 @@
+<div class="main-menu-item">
+  <a class="main-menu-button-link" href="javascript:void(0)">
+    <span>{{ text }}</span>
+    <i *ngIf="hasSubitems" class="fa fa-caret-down"></i>
+  </a>
+  <div *ngIf="hasSubitems" class="sub-menu-items-container">
+    <ng-content>
+    </ng-content>
+  </div>
+</div>

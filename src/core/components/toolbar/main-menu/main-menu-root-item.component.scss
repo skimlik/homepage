@@ -1,0 +1,82 @@
+@import "/src/assets/kns.variables";
+
+.main-menu-item {
+  position: relative;
+  float: left;
+  min-width: $menu-item-width;
+  width: $menu-item-width;
+  max-width: $menu-item-width;
+  margin-right: 16px;
+  z-index: 99;
+
+  .main-menu-button-link {
+    position: relative;
+    color: $color-primary;
+    font-size: 1.2em;
+    font-weight: 500;
+    padding: 20px 16px;
+    text-decoration: none;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 1px;
+
+    span {
+      text-overflow: ellipsis;
+      overflow-x: hidden;
+      white-space: nowrap;
+    }
+
+    &:hover {
+      background: darken($color-accent, 10);
+    }
+
+    .fa {
+      padding-left: 6px;
+      transition: transform .3s linear;
+    }
+
+    &:hover .fa {
+      transform: rotate(180deg) translateX(-.5em);
+    }
+  }
+
+  .sub-menu-items-container {
+    display: none;
+    position: absolute;
+    left: 0;
+    min-width: 196px;
+    max-width: 196px;
+    background: $color-accent;
+    z-index: 99;
+  }
+
+  &:hover .sub-menu-items-container {
+    display: initial;
+    z-index: 99;
+  }
+}
+
+@media (max-width: 960px) {
+  :host {
+    width: 100%;
+  }
+
+  .main-menu-item {
+    position: relative;
+    background: $color-accent;
+    width: 100%;
+    min-width: 100%;
+    max-width: initial;
+
+    .sub-menu-items-container {
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      min-width: 100%;
+      background: lighten($color-accent, 15);
+    }
+  }
+}

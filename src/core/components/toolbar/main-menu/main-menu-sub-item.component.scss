@@ -1,0 +1,67 @@
+@import "/src/assets/kns.variables";
+
+:host {
+  display: block;
+  position: relative;
+}
+
+.main-menu-item {
+  position: relative;
+  float: left;
+  min-width: $menu-item-width;
+  max-width: $menu-item-width;
+  margin-right: 16px;
+  flex-basis: $menu-item-width;
+  background: lighten($color-accent, 12);
+  z-index: 98;
+
+  .main-menu-button-link {
+    position: relative;
+    color: $color-primary;
+    font-size: 1.2em;
+    font-weight: 500;
+    padding: 20px 16px;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 1px;
+
+    span {
+      text-overflow: ellipsis;
+      overflow-x: hidden;
+      white-space: nowrap;
+    }
+
+    &:hover {
+      background: darken($color-accent, 10);
+    }
+
+    .fa {
+      padding-left: 6px;
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  :host {
+    width: 100%;
+
+    .main-menu-item {
+      width: 100%;
+      position: relative;
+      min-width: initial;
+      max-width: initial;
+
+      .main-menu-button-link {
+        background: lighten($color-accent, 25);
+        width: 100%;
+
+        &:hover {
+          background: darken($color-accent, 10);
+        }
+      }
+    }
+  }
+}

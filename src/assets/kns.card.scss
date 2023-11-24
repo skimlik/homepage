@@ -21,6 +21,18 @@
 
     flex-grow: 0;
     flex-shrink: 0;
+
+    .kns-card-title-text {
+      position: relative;
+      font-size: larger;
+      overflow-x: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .kns-card-title-icon {
+      position: relative;
+    }
   }
 
   .kns-card-body {
