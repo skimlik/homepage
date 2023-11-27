@@ -47,8 +47,8 @@
     display: none;
     position: absolute;
     left: 0;
-    min-width: 196px;
-    max-width: 196px;
+    min-width: $menu-item-width;
+    max-width: $menu-item-width;
     background: $color-accent;
     z-index: 99;
   }
@@ -70,6 +70,7 @@
     width: 100%;
     min-width: 100%;
     max-width: initial;
+    height: 62px;
 
     .sub-menu-items-container {
       position: relative;

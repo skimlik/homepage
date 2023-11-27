@@ -12,6 +12,9 @@ export class MainMenuSubItemComponent implements OnInit {
   @Input()
   text = 'Menu Item';
 
+  @Input()
+  subtext = '';
+
   constructor() { }
 
   ngOnInit(): void { }

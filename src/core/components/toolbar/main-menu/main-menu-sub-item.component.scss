@@ -13,6 +13,7 @@
   margin-right: 16px;
   flex-basis: $menu-item-width;
   background: lighten($color-accent, 12);
+  height: 62px;
   z-index: 98;
 
   .main-menu-button-link {
@@ -23,15 +24,25 @@
     padding: 20px 16px;
     text-decoration: none;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
     align-items: center;
     flex-wrap: nowrap;
     gap: 1px;
+
+    &.two-lines {
+      padding: 10.5px 16px;
+    }
 
     span {
       text-overflow: ellipsis;
       overflow-x: hidden;
       white-space: nowrap;
+
+      &.text-hint {
+        font-size: small;
+      }
     }
 
     &:hover {

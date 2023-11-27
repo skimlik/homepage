@@ -10,6 +10,7 @@
   min-width: $menu-item-width;
   max-width: $menu-item-width;
   margin-right: 16px;
+  height: 62px;
   z-index: 99;
 
   .main-menu-button-link {
@@ -64,7 +65,7 @@
   }
 
   &:hover .sub-menu-items-container {
-    transform: translateX(196px);
+    transform: translateX($menu-item-width);
     max-height: initial;
     opacity: 1;
     visibility: visible;
