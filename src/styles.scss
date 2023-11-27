@@ -41,6 +41,7 @@ a, a:visited {
 }
 
 .toolbar {
+  @include flex-row();
   background-color: $color-accent;
   padding: 6px;
   color: $color-primary;
@@ -53,4 +54,8 @@ a, a:visited {
 
 .logo-svg {
   fill: $color-primary;
+}
+
+.text-ellipsis {
+  @include text_ellipsis();
 }

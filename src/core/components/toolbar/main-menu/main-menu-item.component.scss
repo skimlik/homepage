@@ -1,39 +1,27 @@
 @import "/src/assets/kns.variables";
+@import "./menu-mixins.scss";
 
 :host {
-  display: block;
-  position: relative;
+  @include block_relative();
 }
 
 .main-menu-item {
+  @include full_width();
   position: relative;
-  min-width: $menu-item-width;
-  max-width: $menu-item-width;
   margin-right: 16px;
-  height: 62px;
+  height: $toolbar-height;
   z-index: 99;
 
   .main-menu-button-link {
+    @include menu_button_link();
+    @include horizontal_space_between();
+    @include menu_color($color-primary, $color-accent);
     border-top: 1px solid darken($color-accent, 7);
-    position: relative;
-    color: $color-primary;
-    background: $color-accent;
-    font-size: 1.2em;
-    font-weight: 500;
-    padding: 20px 16px;
-    text-decoration: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: nowrap;
     gap: 1px;
     z-index: 99;
 
     span {
       flex-shrink: 1;
-      text-overflow: ellipsis;
-      overflow-x: hidden;
-      white-space: nowrap;
     }
 
     &:hover {
@@ -42,7 +30,6 @@
     }
 
     .fa {
-      padding-left: 6px;
       transition: transform .3s linear;
     }
 
@@ -76,13 +63,8 @@
 }
 
 @media (max-width: 960px) {
-  :host {
-    width: 100%;
-  }
-
   .main-menu-item {
-    min-width: 100%;
-    max-width: 100%;
+    @include full_width();
 
     .sub-menu-items-container {
       position: relative;

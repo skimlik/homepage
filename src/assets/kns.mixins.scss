@@ -2,3 +2,21 @@
 @mixin box-shadow {
   box-shadow: -2px -2px 3px rgba(0, 0, 0, 0.1);
 }
+
+@mixin text_ellipsis() {
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+  white-space: nowrap;
+}
+
+@mixin flex_row() {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+@mixin flex_column() {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}

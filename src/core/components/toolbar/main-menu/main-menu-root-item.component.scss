@@ -1,35 +1,18 @@
 @import "/src/assets/kns.variables";
+@import "./menu-mixins.scss";
 
 .main-menu-item {
+  @include menu_width($menu-item-width);
   position: relative;
   float: left;
-  min-width: $menu-item-width;
-  width: $menu-item-width;
-  max-width: $menu-item-width;
   margin-right: 16px;
   z-index: 99;
 
   .main-menu-button-link {
+    @include menu_button_link();
+    @include horizontal_space_between();
+    @include menu_color($color-primary, $color-accent);
     border-top: 1px solid darken($color-accent, 7);
-    position: relative;
-    color: $color-primary;
-    background: $color-accent;
-    font-size: 1.2em;
-    font-weight: 500;
-    padding: 20px 16px;
-    text-decoration: none;
-    overflow-x: hidden;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: nowrap;
-    gap: 1px;
-
-    span {
-      text-overflow: ellipsis;
-      overflow-x: hidden;
-      white-space: nowrap;
-    }
 
     &:hover {
       color: $color-dark;
@@ -47,20 +30,17 @@
   }
 
   .sub-menu-items-container {
+    @include menu_width($menu-item-width);
     display: none;
     position: absolute;
     left: 0;
     margin: 0;
-    background: $color-accent;
-    min-width: $menu-item-width;
-    max-width: $menu-item-width;
     background: $color-accent;
     z-index: 99;
   }
 
   &:hover .sub-menu-items-container {
     display: initial;
-    z-index: 99;
   }
 }
 
@@ -70,19 +50,15 @@
   }
 
   .main-menu-item {
+    @include full_width();
+    @include menu_color($color-primary, $color-accent);
     position: relative;
-    background: $color-accent;
     margin: 0;
-    width: 100%;
-    min-width: 100%;
-    max-width: initial;
-    height: 62px;
+    height: $toolbar-height;
 
     .sub-menu-items-container {
+      @include full_width();
       position: relative;
-      width: 100%;
-      max-width: 100%;
-      min-width: 100%;
     }
   }
 }

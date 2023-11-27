@@ -1,19 +1,13 @@
 @import "/src/assets/kns.variables";
+@import "./menu-mixins.scss";
 
 :host {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  @include horizontal_space_between();
 
   nav {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: end;
-    align-items: center;
+    @include horizontal_left_align();
     flex-shrink: 0;
     flex-grow: 1;
-    justify-content: start;
   }
 }
 
@@ -23,9 +17,8 @@
   width: 48px;
   align-self: self-end;
   flex-grow: 0;
-
-  height: 100%;
   gap: 1em;
+  height: 100%;
 
   .menu-toggle {
     position: relative;
@@ -70,13 +63,13 @@
 @media (max-width: 960px) {
   :host {
     width: 100%;
-    justify-content: end;
+    justify-content: flex-end;
 
     nav {
       display: none;
       position: absolute;
       left: 0;
-      top: 62px;
+      top: $toolbar-height;
       width: 100%;;
       flex-direction: column;
     }
