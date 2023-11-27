@@ -17,8 +17,10 @@
   z-index: 98;
 
   .main-menu-button-link {
+    border-top: 1px solid darken($color-accent, 7);
     position: relative;
     color: $color-primary;
+    background: $color-accent;
     font-size: 1.2em;
     font-weight: 500;
     padding: 20px 16px;
@@ -46,6 +48,7 @@
     }
 
     &:hover {
+      color: $color-dark;
       background: darken($color-accent, 10);
     }
 
@@ -66,12 +69,7 @@
       max-width: initial;
 
       .main-menu-button-link {
-        background: lighten($color-accent, 25);
         width: 100%;
-
-        &:hover {
-          background: darken($color-accent, 10);
-        }
       }
     }
   }

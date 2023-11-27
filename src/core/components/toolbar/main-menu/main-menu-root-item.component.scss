@@ -10,8 +10,10 @@
   z-index: 99;
 
   .main-menu-button-link {
+    border-top: 1px solid darken($color-accent, 7);
     position: relative;
     color: $color-primary;
+    background: $color-accent;
     font-size: 1.2em;
     font-weight: 500;
     padding: 20px 16px;
@@ -30,6 +32,7 @@
     }
 
     &:hover {
+      color: $color-dark;
       background: darken($color-accent, 10);
     }
 
@@ -47,6 +50,8 @@
     display: none;
     position: absolute;
     left: 0;
+    margin: 0;
+    background: $color-accent;
     min-width: $menu-item-width;
     max-width: $menu-item-width;
     background: $color-accent;
@@ -67,6 +72,7 @@
   .main-menu-item {
     position: relative;
     background: $color-accent;
+    margin: 0;
     width: 100%;
     min-width: 100%;
     max-width: initial;
@@ -77,7 +83,6 @@
       width: 100%;
       max-width: 100%;
       min-width: 100%;
-      background: lighten($color-accent, 15);
     }
   }
 }
