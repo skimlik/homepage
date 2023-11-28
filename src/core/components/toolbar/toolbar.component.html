@@ -10,15 +10,5 @@
     </div>
     <div class="title" *ngIf="title">{{ title }}</div>
   </div>
-  <kn-main-menu>
-    <kn-root-menu-item text="Third-party tools" [hasSubMenu]="true">
-      <kn-menu-item text="Currency rates" [hasSubitems]="true">
-        <kn-sub-menu-item
-          text="NBU"
-          subtext="National Bank of Ukraine"
-          [routerLink]="['/currency/nbu']"
-        ></kn-sub-menu-item>
-      </kn-menu-item>
-    </kn-root-menu-item>
-  </kn-main-menu>
+  <kn-main-menu [menuItems]="menuItems"></kn-main-menu>
 </div>

@@ -1,5 +1,13 @@
 <nav>
-  <ng-content></ng-content>
+  <kn-root-menu-item *ngFor="let rootItem of menuItems" [item]="rootItem">
+    <ng-container *ngIf="rootItem.subitems?.length">
+      <kn-menu-item *ngFor="let item of rootItem.subitems" [item]="item">
+        <ng-container *ngIf="item.subitems?.length">
+          <kn-sub-menu-item *ngFor="let subitem of item.subitems" [item]="subitem"></kn-sub-menu-item>
+        </ng-container>
+      </kn-menu-item>
+    </ng-container>
+  </kn-root-menu-item>
 </nav>
 <div class="menu-toggle-container" [ngClass]="{ active: active }">
   <div class="menu-toggle" (click)="menuToggleClick()"></div>

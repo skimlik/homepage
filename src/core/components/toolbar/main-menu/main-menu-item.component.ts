@@ -1,21 +1,31 @@
 import { ChangeDetectionStrategy, Input } from '@angular/core';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { MainMenuItem } from './models';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'kn-menu-item',
   templateUrl: 'main-menu-item.component.html',
   styleUrls: ['main-menu-item.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-
-export class MainMenuItemComponent implements OnInit {
+export class MainMenuItemComponent {
   @Input()
-  text = 'Menu Item';
+  item?: MainMenuItem;
 
-  @Input()
-  hasSubitems = false;
+  constructor(private _router: Router) {
+  }
 
-  constructor() { }
+  onClick() {
+    if (this.item?.url) {
+      this._router.navigate([this.item.url]);
+    }
+    if (this.item?.callback) {
+      this.item.callback({ target: this.item });
+    }
+  }
 
-  ngOnInit(): void { }
+  get hasSubitems(): boolean {
+    return !!this.item?.subitems?.length;
+  }
 }

@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Input } from '@angular/core';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { MainMenuItem } from './models';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'kn-root-menu-item',
@@ -8,14 +10,23 @@ import { Component, OnInit } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class MainMenuRootItemComponent implements OnInit {
+export class MainMenuRootItemComponent {
   @Input()
-  text = 'Menu Item';
+  item?: MainMenuItem;
 
-  @Input()
-  hasSubMenu = true;
+  constructor(private _router: Router) {
+  }
 
-  constructor() { }
+  onClick() {
+    if (this.item?.url) {
+      this._router.navigate([this.item.url]);
+    }
+    if (this.item?.callback) {
+      this.item.callback({ target: this.item });
+    }
+  }
 
-  ngOnInit(): void { }
+  get hasSubitems(): boolean {
+    return !!this.item?.subitems?.length;
+  }
 }

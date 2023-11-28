@@ -1,19 +1,20 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, HostBinding, Input } from '@angular/core';
+import { MainMenuItem } from './models';
 
 @Component({
   selector: 'kn-main-menu',
   templateUrl: 'main-menu.component.html',
-  styleUrls: ['main-menu.component.scss']
+  styleUrls: ['main-menu.component.scss'],
 })
-
-export class MainMenuComponent implements OnInit {
+export class MainMenuComponent {
   active = false;
 
-  @HostBinding('class.active') get isActive() { return this.active; }
+  @Input()
+  menuItems: MainMenuItem[] = [];
 
-  constructor() { }
-
-  ngOnInit(): void { }
+  @HostBinding('class.active') get isActive() {
+    return this.active;
+  }
 
   menuToggleClick(): void {
     this.active = !this.active;

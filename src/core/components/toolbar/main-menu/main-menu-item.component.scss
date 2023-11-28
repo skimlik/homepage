@@ -3,6 +3,8 @@
 
 :host {
   @include block_relative();
+  height: $toolbar-height;
+  max-height: $toolbar-height;
 }
 
 .main-menu-item {

@@ -1,10 +1,10 @@
-<div class="main-menu-item">
+<div class="main-menu-item" (click)="onClick()">
   <a
     class="main-menu-button-link"
     href="javascript:void(0)"
-    [ngClass]="{'two-lines': !!subtext}"
+    [ngClass]="{'two-lines': !!item?.subtitle}"
   >
-    <span class="caption text-ellipsis">{{ text }}</span>
-    <span class="text-hint text-ellipsis">{{ subtext }}</span>
+    <span class="caption text-ellipsis">{{ item?.title }}</span>
+    <span class="text-hint text-ellipsis">{{ item?.subtitle }}</span>
   </a>
 </div>

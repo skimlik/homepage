@@ -31,9 +31,11 @@
 
 @mixin menu_button_link() {
   position: relative;
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-weight: 500;
-  padding: 20px 16px;
+  height: 100%;
+  padding: 0px 16px;
+  box-sizing: border-box;
   text-decoration: none;
   overflow-x: hidden;
   gap: 1px;
