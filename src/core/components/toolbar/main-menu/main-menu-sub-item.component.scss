@@ -28,10 +28,6 @@
     }
 
     span {
-      text-overflow: ellipsis;
-      overflow-x: hidden;
-      white-space: nowrap;
-
       &.text-hint {
         font-size: small;
       }
@@ -47,8 +43,10 @@
 @media (max-width: 960px) {
   :host {
     width: 100%;
+    z-index: 100;
 
     .main-menu-item {
+      z-index: 100;
       width: 100%;
       position: relative;
       min-width: initial;
