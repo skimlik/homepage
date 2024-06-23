@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { NbuRatesComponent } from './nbu/nbu-rates.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { featureName } from './store';
 import { reducers } from './store/currency-state';

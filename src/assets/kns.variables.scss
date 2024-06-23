@@ -1,3 +1,5 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+
 $color-white: #F2F2EF;
 $color-primary: #374709;
 $color-dark: #212517;
@@ -8,3 +10,20 @@ $color-inactive-text: #AAAAAA;
 $menu-item-width: 200px;
 $toolbar-height: 62px;
 
+$body-bg: #ffffff;
+$focus-ring-color:      rgba($color-border, $focus-ring-opacity);
+
+$theme-colors: (
+  "primary":    $color-primary,
+  "secondary":  $color-accent,
+  "success":    $success,
+  "info":       #759242,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+);
+
+@function theme-color ($key: "primary") {
+    @return map-get($theme-colors, $key);
+}

@@ -1,9 +1,15 @@
-.kns-card {
+.card {
   width: auto;
   min-width: 280px;
   min-height: 240px;
+  margin: 12px;
   flex-grow: 1;
-  .kns-card-body {
+  .card-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .card-body {
     overflow-y: auto;
   }
 }
@@ -17,7 +23,7 @@
     flex-wrap: wrap;
     justify-content: stretch;
 
-    .kns-card {
+    .card {
       flex: 1 1 30%;
     }
   }
@@ -31,7 +37,7 @@
 
 @media screen and (min-width: 1920px) {
   .cards {
-    .kns-card {
+    .card {
       flex: 1 1 25%;
     }
   }

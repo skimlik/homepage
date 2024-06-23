@@ -1,18 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, Inject, OnInit } from '@angular/core';
+import { EMPTY, Observable, catchError } from 'rxjs';
+import { BACKEND_URL } from './app.constants';
 
 @Component({
   selector: 'kn-home',
   templateUrl: 'home.component.html',
-  styleUrls: ['home.component.scss']
+  styleUrls: ['home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  guid = '';
+  guid: Observable<string> = EMPTY;
 
-  constructor() { }
+  constructor(
+    private httpClient: HttpClient,
+    @Inject(BACKEND_URL) private backendUrl: string
+  ) {}
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   generateGuid(): void {
-    this.guid = crypto?.randomUUID() ?? 'Error';
+    this.guid = this.httpClient
+      .get<string>(`${this.backendUrl}/api/guid`)
+      .pipe(catchError(() => 'Error'));
   }
 }

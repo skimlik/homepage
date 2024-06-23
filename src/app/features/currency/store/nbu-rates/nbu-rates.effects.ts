@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { NbuRatesService } from '../../nbu/nbu-rates.service';
 import * as fromActions from './nbu-rates.actions';
-import { filter, map, mergeMap, switchMap, withLatestFrom } from 'rxjs';
+import { filter, map, switchMap, withLatestFrom } from 'rxjs';
 import { CurrenciesState } from '../currency-state';
 import { Store, select } from '@ngrx/store';
 import { needRefreshSelector } from '.';

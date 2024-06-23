@@ -22,6 +22,8 @@
     "@ngrx/router-store": "^14.3.3",
     "@ngrx/store": "^14.3.3",
     "@ngrx/store-devtools": "^14.3.3",
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
     "font-awesome": "^4.7.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

@@ -1,36 +1,51 @@
 <div class="home-container">
   <div class="cards">
-    <div class="kns-card">
-      <div class="kns-card-title">
-        <span class="color-primary kns-card-title-text">Site is in development</span>
-        <i class="fa fa-hand-o-left fa-lg color-primary kns-card-title-icon" aria-hidden="true"></i>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">
+          <span class="color-primary kns-card-title-text"
+            >Site is in development</span
+          >
+          <i
+            class="fa fa-hand-o-left fa-lg color-primary kns-card-title-icon"
+            aria-hidden="true"
+          ></i>
+        </h5>
+        <p>
+          Sorry for inconvenience, this resource is for personal use only. If
+          you interested in using this site, please contact the author.
+        </p>
       </div>
-      <p class="kns-card-body">
-        Sorry for inconvenience, this resource is for personal use only. If you
-        interested in using this site, please contact the author.
-      </p>
     </div>
-    <div class="kns-card">
-      <div class="kns-card-title">
-        <span class="color-primary kns-card-title-text">Tools and Utilities</span>
-        <i class="fa fa-gears fa-lg color-primary kns-card-title-icon" aria-hidden="true"></i>
-      </div>
-      <div class="kns-card-body">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">
+          <span class="color-primary kns-card-title-text"
+            >Tools and Utilities</span
+          >
+          <i
+            class="fa fa-gears fa-lg color-primary kns-card-title-icon"
+            aria-hidden="true"
+          ></i>
+        </h5>
         <p>
           Eventually, this section will contain set of controls and helpers,
           that will simplify your day-to-day tasks.
         </p>
         <p>
-          Guid generator <a href="javascript:void(0)" (click)="generateGuid()">New Guid</a>
-          <span class="guid">{{guid}}</span>
+          Guid generator
+          <a href="javascript:void(0)" (click)="generateGuid()">New Guid</a>
+          <span class="guid">{{ guid | async }}</span>
         </p>
       </div>
     </div>
-    <div class="kns-card">
-      <div class="kns-card-title">
-        <span class="color-primary kns-card-title-text">Home space</span>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">
+          <span class="color-primary kns-card-title-text">Home space</span>
+        </h5>
+        <p>For authorized users only.</p>
       </div>
-      <p class="kns-card-body">For authorized users only.</p>
     </div>
   </div>
 </div>

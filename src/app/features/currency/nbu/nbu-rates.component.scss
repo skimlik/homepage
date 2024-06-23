@@ -8,7 +8,7 @@
     font-weight: 500;
 
     div {
-      border-bottom: 2px solid $color-primary;
+      border-bottom: 2px solid theme-color("primary");
     }
   }
 
@@ -24,16 +24,16 @@
     }
 
     div:nth-child(1) {
-      flex-basis: 150px;
+      flex-basis: calc(100% - 85%);
     }
     div:nth-child(2) {
-      flex-basis: 240px;
+      flex-basis: calc(100% - 50%)
     }
     div:nth-child(3) {
-      flex-basis: 150px;
+      flex-basis: calc(100% - 80%);
     }
     div:nth-child(4) {
-      flex-basis: 120px;
+      flex-basis: calc(100% - 85%);
     }
   }
 }
