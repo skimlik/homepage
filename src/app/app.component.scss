@@ -6,14 +6,4 @@
 
 .link-active {
   position: relative;
-
-  &::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 3em;
-    width: 100%;
-    border-bottom: 2px solid $color-primary;
-    margin: 3px 0;
-  }
 }
