@@ -1,3 +1,5 @@
+@import "/src/assets/kns.variables";
+
 .auth-container {
     margin-top: 20px;
     margin: auto;
@@ -13,4 +15,14 @@
         flex-direction: column;
 
     }
+}
+
+.validation-msg {
+  color: $danger;
+  margin-bottom: 1em;
+  font-size: smaller;
+
+  &.is-invalid {
+    display: block;
+  }
 }

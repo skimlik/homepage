@@ -52,9 +52,19 @@
         </li>
       </ul>
       <span class="navbar-text">
-        <button class="btn btn-outline-primary" routerLink="/auth/login">
+        <button class="btn btn-outline-primary" routerLink="/auth/login" *ngIf="!(authenticated$ | async)">
           Login
         </button>
+        <div class="dropdown" *ngIf="authenticated$ | async">
+          <button class="btn btn-primary dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-person-add me-1" aria-hidden="true"></i>
+            <span>{{userName$ | async}}</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" (click)="signout()">Sign out</a></li>
+            <li><a class="dropdown-item" routerLink="/auth/user-profile">Profile</a></li>
+          </ul>
+        </div>
       </span>
     </div>
   </div>

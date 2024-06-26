@@ -1,13 +1,47 @@
 <div class="auth-container">
-  <form>
+  <div class="alert alert-danger d-flex align-items-center" role="alert" *ngIf="error">
+    {{error}}
+  </div>
+  <form #authForm="ngForm">
     <div class="mb-3">
       <label for="user-name-field" class="form-label">Email address</label>
-      <input type="email" class="form-control" id="user-name-field" aria-describedby="emailHelp">
+      <input
+        type="email"
+        name="emailField"
+        class="form-control"
+        id="user-name-field"
+        aria-describedby="emailHelp"
+        [(ngModel)]="email"
+        #emailField="ngModel"
+        required
+        email
+      />
+    </div>
+    <div class="validation-msg" *ngIf="emailField.invalid && (emailField.touched || emailField.dirty)">
+      <div [ngClass]="{'is-invalid': emailField.invalid}">
+        Valid email address is required
+      </div>
     </div>
     <div class="mb-3">
       <label for="password-field" class="form-label">Password</label>
-      <input type="password" class="form-control" id="password-field">
+      <input
+        type="password"
+        class="form-control"
+        name="passwordField"
+        id="password-field"
+        [(ngModel)]="password"
+        #passwordField="ngModel"
+        required
+        min="5"
+      />
     </div>
-    <button class="btn btn-primary"><i class="bi bi-person-check me-2" aria-hidden="true"></i>Sign in</button>
+    <div class="validation-msg" *ngIf="passwordField.invalid && (passwordField.touched || passwordField.dirty)">
+      <div [ngClass]="{'is-invalid': passwordField.invalid}">
+        Valid email address is required
+      </div>
+    </div>
+    <button class="btn btn-primary" [disabled]="!authForm.form.valid" (click)="signin()">
+      <i class="bi bi-person-check me-2" aria-hidden="true"></i>Sign in
+    </button>
   </form>
 </div>

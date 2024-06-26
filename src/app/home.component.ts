@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { EMPTY, Observable, catchError } from 'rxjs';
 import { BACKEND_URL } from './app.constants';
 
@@ -8,15 +8,13 @@ import { BACKEND_URL } from './app.constants';
   templateUrl: 'home.component.html',
   styleUrls: ['home.component.scss'],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   guid: Observable<string> = EMPTY;
 
   constructor(
     private httpClient: HttpClient,
-    @Inject(BACKEND_URL) private backendUrl: string
+    @Inject(BACKEND_URL) private backendUrl: string,
   ) {}
-
-  ngOnInit() {}
 
   generateGuid(): void {
     this.guid = this.httpClient
