@@ -1,5 +1,23 @@
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../node_modules/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
 @import "assets/kns.variables";
 @import "assets/kns.mixins";
+
+
+// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+
+// 4. Include any default map overrides here
+
+
+// 5. Import all the rest of Bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+
+// Then add additional custom code here
 
 /* You can add global styles to this file, and also import other style files */
 html,
@@ -14,13 +32,12 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
 }
 
 .body {
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .color-primary {

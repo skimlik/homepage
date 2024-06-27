@@ -1,7 +1,6 @@
-@import "/src/assets/kns.variables";
+@import "../../../assets/kns.variables";
 
 .auth-container {
-    margin-top: 20px;
     margin: auto;
     width: 320px;
     display: flex;
@@ -18,7 +17,7 @@
 }
 
 .validation-msg {
-  color: $danger;
+  color: var(--bs-red);
   margin-bottom: 1em;
   font-size: smaller;
 
