@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from '../core/auth/auth.service';
 import { LocalStorageService } from '../core/services/local-storage.servicce';
 import { UserInfo } from '../core/auth/user-info';
-import { map } from 'rxjs/operators';
+import { map, withLatestFrom } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { UserInfoService } from '../core/auth/user-info.service';
 
@@ -14,8 +14,9 @@ import { UserInfoService } from '../core/auth/user-info.service';
 export class AppComponent {
   title = 'homepage';
   authenticated$ = this.authService.authenticated$;
-  userInfo$ = this.authenticated$.pipe(
-    map((isAuth) => (isAuth ? this.userInfoService.getCachedUserInfo() : null)),
+  userInfo$ = this.userInfoService.userInfo$.pipe(
+    withLatestFrom(this.authenticated$),
+    map(([info, isAuth]) => (isAuth ? info ?? this.userInfoService.getCachedUserInfo() : null)),
   );
   userName$ = this.userInfo$.pipe(
     map((user) => this.userInfoService.toFriendlyName(user)),

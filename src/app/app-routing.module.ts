@@ -17,13 +17,18 @@ const routes: Routes = [
     path: 'currency',
     loadChildren: () =>
       import('./features/currency/currency-rates.module').then(
-        (m) => m.CurrencyRatesModule
+        (m) => m.CurrencyRatesModule,
       ),
   },
   {
     path: 'auth',
     loadChildren: () =>
       import('./features/auth/auth.module').then((m) => m.AuthModule),
+  },
+  {
+    path: 'tools',
+    loadChildren: () =>
+      import('./features/tools/tools.module').then((m) => m.ToolsModule),
   },
 ];
 

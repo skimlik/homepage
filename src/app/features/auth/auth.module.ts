@@ -4,6 +4,7 @@ import { AuthComponent } from './auth.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { UserProfileComponent } from './user-profile.component';
+import { AuthenticationGuard } from 'src/core/auth/auth.guard';
 
 const toExport = [AuthComponent, UserProfileComponent];
 
@@ -19,6 +20,7 @@ const routes: Routes = [
   {
     path: 'user-profile',
     component: UserProfileComponent,
+    canActivate: [AuthenticationGuard],
   },
 ];
 

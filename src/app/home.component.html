@@ -42,7 +42,10 @@
             aria-hidden="true"
           ></i>
         </h5>
-        <p>For authorized users only.</p>
+        <p>
+          For authorized users only.<br />
+          <span *ngIf="!isAuthenticated">Please <a routerLink="/auth/login">Sign in</a></span>
+        </p>
       </div>
     </div>
   </div>

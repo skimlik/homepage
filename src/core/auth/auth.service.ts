@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { LocalStorageService } from '../services/local-storage.servicce';
 import { AuthToken } from './auth-token';
-import { AuthTokenStorageKey } from './auth.constants';
+import { AuthTokenStorageKey, UserInfoStorageKey } from './auth.constants';
 import { BehaviorSubject } from 'rxjs';
+import { UserInfoService } from './user-info.service';
 
 @Injectable()
 export class AuthService {
@@ -10,7 +11,10 @@ export class AuthService {
 
   authenticated$ = this._authenticated$.asObservable();
 
-  constructor(private localStorage: LocalStorageService) {}
+  constructor(
+    private localStorage: LocalStorageService,
+    private userInfoService: UserInfoService,
+  ) {}
 
   getToken(): AuthToken | null {
     const json = this.localStorage.getJson<AuthToken>(AuthTokenStorageKey);
@@ -34,5 +38,6 @@ export class AuthService {
   logoff(): void {
     this.localStorage.remove(AuthTokenStorageKey);
     this._authenticated$.next(this.isAuthenticated);
+    this.userInfoService.reset();
   }
 }

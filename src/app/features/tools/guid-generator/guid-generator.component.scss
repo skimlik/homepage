@@ -1,0 +1,18 @@
+.guid-row {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    margin-bottom: 3px;
+
+    .c1 {
+        flex: 0 1 3em;
+        border-right: 1px solid lightgray;
+        border-bottom: 1px solid lightgray;
+    }
+
+    .c2 {
+        flex: 0 1 calc(100% - 3em);
+        padding-left: 1em;
+        border-bottom: 1px solid lightgray;
+    }
+}

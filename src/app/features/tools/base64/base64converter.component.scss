@@ -1,0 +1,27 @@
+textarea {
+  resize: none;
+  height: 8em;
+  width: 50%
+}
+
+.convert-button {
+  width: 140px;
+  cursor: pointer;
+}
+
+.input-output {
+  display: flex;
+  gap: .5em;
+  justify-content: space-evenly;
+}
+
+.to64container {
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+}

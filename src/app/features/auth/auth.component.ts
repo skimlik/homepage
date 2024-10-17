@@ -5,8 +5,6 @@ import { AuthToken } from '../../../core/auth/auth-token';
 import { AuthService } from '../../../core/auth/auth.service';
 import { catchError, mergeMap, take, tap } from 'rxjs';
 import { Location } from '@angular/common';
-import { LocalStorageService } from '../../../core/services/local-storage.servicce';
-import { UserInfo } from '../../../core/auth/user-info';
 import { UserInfoService } from '../../../core/auth/user-info.service';
 
 @Component({
@@ -36,7 +34,7 @@ export class AuthComponent {
       })
       .pipe(
         tap((token) => this.authService.setToken(token)),
-        mergeMap((token) => this.userInfoService.getUserInfo()),
+        mergeMap(() => this.userInfoService.getUserInfo()),
         catchError((err) => {
           this.error = 'Server error, please try again later';
           if (err && err.status === 401) {

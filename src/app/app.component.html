@@ -29,7 +29,7 @@
             routerLink="/"
             routerLinkActive="link-active"
             [routerLinkActiveOptions]="{ exact: true }"
-            >Home</a
+          >Home</a
           >
         </li>
         <li class="nav-item dropdown">
@@ -44,25 +44,58 @@
           <ul class="dropdown-menu">
             <li>
               <a class="dropdown-item" routerLink="/currency/nbu"
-                ><i class="bi bi-currency-exchange me-2" aria-hidden="true"></i
-                >Currency rates</a
+              ><i class="bi bi-currency-exchange me-2" aria-hidden="true"></i
+              >Currency rates</a
               >
             </li>
           </ul>
         </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Utilities
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" routerLink="/tools/guid-generator">
+                Guid generator
+              </a>
+            </li>
+            <li><a class="dropdown-item" routerLink="/tools/base64-converter">
+              Base64 converter
+            </a></li>
+          </ul>
+        </li>
       </ul>
       <span class="navbar-text">
-        <button class="btn btn-outline-primary" routerLink="/auth/login" *ngIf="!(authenticated$ | async)">
+        <button
+          class="btn btn-outline-primary"
+          routerLink="/auth/login"
+          *ngIf="!(authenticated$ | async)"
+        >
           Login
         </button>
         <div class="dropdown" *ngIf="authenticated$ | async">
-          <button class="btn btn-primary dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <button
+            class="btn btn-primary dropdown-toggle"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
             <i class="bi bi-person-add me-1" aria-hidden="true"></i>
-            <span>{{userName$ | async}}</span>
+            <span>{{ userName$ | async }}</span>
           </button>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" (click)="signout()">Sign out</a></li>
-            <li><a class="dropdown-item" routerLink="/auth/user-profile">Profile</a></li>
+            <li>
+              <a class="dropdown-item" routerLink="/auth/user-profile"
+              >Profile</a
+              >
+            </li>
           </ul>
         </div>
       </span>

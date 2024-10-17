@@ -3,6 +3,7 @@ $color-primary: #374709;
 $color-dark: #212517;
 $color-accent: #DED3A6;
 $color-border: #759242;
+$color-danger: #dc3545;
 $color-inactive-text: #AAAAAA;
 
 $menu-item-width: 200px;
@@ -15,7 +16,9 @@ $focus-ring-color: rgba($color-border, $focus-ring-opacity);
 $theme-colors: (
   "primary":    $color-primary,
   "secondary":  $color-accent,
-  "info":       #759242,
+  "info":       #7bb31b,
+  "danger":     $color-danger,
+  "dark":       #212529
 );
 
 @function theme-color($key: "primary") {
