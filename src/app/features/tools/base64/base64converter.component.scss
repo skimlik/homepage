@@ -1,7 +1,7 @@
 textarea {
   resize: none;
   height: 8em;
-  width: 50%
+  width: 100%;
 }
 
 .convert-button {
@@ -11,17 +11,32 @@ textarea {
 
 .input-output {
   display: flex;
-  gap: .5em;
+  gap: 0.5em;
   justify-content: space-evenly;
 }
 
-.to64container {
+.converter-container {
   display: flex;
   flex-direction: column;
-  gap: .5em;
+  gap: 0.5em;
 }
 
-.controls {
+.to-base64-container,
+.from-base64-container {
+  width: 50%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 1em;
+}
+
+@media screen and (max-width: 1024px) {
+  .input-output {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .to-base64-container,
+  .from-base64-container {
+    width: 100%;
+  }
 }

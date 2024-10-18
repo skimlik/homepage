@@ -2,18 +2,18 @@
   <h4>Base 64 Converter</h4>
   <hr>
 
-  <div class="to64container">
-    <label for="raw-text-string">Convert to Base64 string</label>
+  <div class="converter-container">
     <div class="input-output">
-      <textarea id="raw-text-string" class="form-control" autocorrect="off" [(ngModel)]="convertFrom"></textarea>
-      <textarea id="converted-base64" class="form-control" autocorrect="off" [(ngModel)]="convertTo"></textarea>
-    </div>
-    <div class="controls">
-      <input type="button" class="btn btn-primary convert-button" value="To Base64" [disabled]="!convertFrom"
-             (click)="onConvertFrom64()"/>
-
-      <input type="button" class="btn btn-primary convert-button" value="From Base64" [disabled]="!convertTo"
-             (click)="onConvertTo64()"/>
+      <div class="from-base64-container">
+        <label for="raw-text-string">Convert to Base64 string</label>
+        <textarea id="raw-text-string" class="form-control" autocorrect="off" [(ngModel)]="convertFrom"></textarea>
+        <input type="button" class="btn btn-primary convert-button" value="To Base64" [disabled]="!convertFrom" (click)="onConvertTo64()"/>
+      </div>
+      <div class="to-base64-container">
+        <label for="converted-base64">Convert from Base64 string</label>
+        <textarea id="converted-base64" class="form-control" autocorrect="off" [(ngModel)]="convertTo"></textarea>
+        <input type="button" class="btn btn-primary convert-button" value="From Base64" [disabled]="!convertTo" (click)="onConvertFrom64()"/>
+      </div>
     </div>
   </div>
 </div>
