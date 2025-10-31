@@ -14,7 +14,23 @@ export class AuthenticationGuard implements CanActivate {
 
   canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot,
+    state: RouterStateSnapshot
+  ):
+    | boolean
+    | UrlTree
+    | Observable<boolean | UrlTree>
+    | Promise<boolean | UrlTree> {
+    return this.auth.isAuthenticated;
+  }
+}
+
+@Injectable()
+export class IsAuthenticatedGuard implements CanActivate {
+  constructor(@Inject(AuthService) private auth: AuthService) {}
+
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
   ):
     | boolean
     | UrlTree

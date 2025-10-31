@@ -29,7 +29,7 @@ const routes: Routes = [
     path: 'tools',
     loadChildren: () =>
       import('./features/tools/tools.module').then((m) => m.ToolsModule),
-  },
+  }
 ];
 
 @NgModule({

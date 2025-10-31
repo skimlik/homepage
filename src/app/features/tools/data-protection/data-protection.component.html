@@ -1,0 +1,25 @@
+<div class="data-protection">
+  <h1>Data Protection</h1>
+  <textarea
+    name="value-text"
+    id="value-text"
+    class="form-control"
+    [(ngModel)]="value"
+  >
+  </textarea>
+  <div class="action-buttons">
+    <button class="btn btn-primary" [disabled]="!value" (click)="onEncode()">
+      Encode
+    </button>
+    <button class="btn btn-primary" [disabled]="!value" (click)="onDecode()">
+      Decode
+    </button>
+  </div>
+
+  <textarea
+    name="converted-text"
+    id="converted-text"
+    class="form-control"
+    [(ngModel)]="converted"
+  ></textarea>
+</div>

@@ -2,7 +2,7 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 import { LocalStorageService } from './services/local-storage.servicce';
 import { AuthService } from './auth/auth.service';
 import { UserInfoService } from './auth/user-info.service';
-import { AuthenticationGuard } from './auth/auth.guard';
+import { AuthenticationGuard, IsAuthenticatedGuard } from './auth/auth.guard';
 
 @NgModule({
   imports: [],
@@ -19,6 +19,7 @@ export class CoreModule {
         AuthService,
         UserInfoService,
         AuthenticationGuard,
+        IsAuthenticatedGuard,
       ],
     };
   }

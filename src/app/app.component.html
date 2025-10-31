@@ -29,7 +29,7 @@
             routerLink="/"
             routerLinkActive="link-active"
             [routerLinkActiveOptions]="{ exact: true }"
-          >Home</a
+            >Home</a
           >
         </li>
         <li class="nav-item dropdown">
@@ -44,8 +44,8 @@
           <ul class="dropdown-menu">
             <li>
               <a class="dropdown-item" routerLink="/currency/nbu"
-              ><i class="bi bi-currency-exchange me-2" aria-hidden="true"></i
-              >Currency rates</a
+                ><i class="bi bi-currency-exchange me-2" aria-hidden="true"></i
+                >Currency rates</a
               >
             </li>
           </ul>
@@ -65,9 +65,20 @@
                 Guid generator
               </a>
             </li>
-            <li><a class="dropdown-item" routerLink="/tools/base64-converter">
-              Base64 converter
-            </a></li>
+            <li>
+              <a class="dropdown-item" routerLink="/tools/base64-converter">
+                Base64 converter
+              </a>
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                routerLink="/tools/data-protection"
+                *ngIf="authenticated$ | async"
+              >
+                Data Protection
+              </a>
+            </li>
           </ul>
         </li>
       </ul>
@@ -93,7 +104,7 @@
             <li><a class="dropdown-item" (click)="signout()">Sign out</a></li>
             <li>
               <a class="dropdown-item" routerLink="/auth/user-profile"
-              >Profile</a
+                >Profile</a
               >
             </li>
           </ul>
