@@ -17,7 +17,7 @@ const routes: Routes = [
     path: 'currency',
     loadChildren: () =>
       import('./features/currency/currency-rates.module').then(
-        (m) => m.CurrencyRatesModule,
+        (m) => m.CurrencyRatesModule
       ),
   },
   {
@@ -29,7 +29,14 @@ const routes: Routes = [
     path: 'tools',
     loadChildren: () =>
       import('./features/tools/tools.module').then((m) => m.ToolsModule),
-  }
+  },
+  {
+    path: 'secrets',
+    loadChildren: () =>
+      import('./features/secret-messages/secret-message.module').then(
+        (m) => m.SecretMessageModule
+      ),
+  },
 ];
 
 @NgModule({

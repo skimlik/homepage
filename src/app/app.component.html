@@ -79,6 +79,15 @@
                 Data Protection
               </a>
             </li>
+            <li>
+              <a
+                class="dropdown-item"
+                routerLink="/secrets"
+                *ngIf="authenticated$ | async"
+              >
+                Create secret message
+              </a>
+            </li>
           </ul>
         </li>
       </ul>

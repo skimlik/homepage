@@ -4,9 +4,9 @@ import { Subject, takeUntil } from 'rxjs';
 import { BACKEND_URL } from 'src/app/app.constants';
 
 @Component({
-  selector: 'app-data-protection',
-  templateUrl: './data-protection.component.html',
-  styleUrls: ['./data-protection.component.scss'],
+  selector: 'kn-data-protection',
+  templateUrl: 'data-protection.component.html',
+  styleUrls: ['data-protection.component.scss'],
 })
 export class DataProtectionComponent implements OnInit {
   private _disposed$ = new Subject<void>();
