@@ -64,8 +64,8 @@ export class SecretMessageComponent {
   }
 
   onCopyLocation() {
-    if (this.location) {
-      navigator.clipboard.writeText(this.location);
+    if (this.uiLocation) {
+      navigator.clipboard.writeText(this.uiLocation);
     }
   }
 }
